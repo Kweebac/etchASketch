@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-flow: column;
+}
+
+.container div {
+  display: flex;
+}
+
+.container div div {
+  border: 1px solid black;
+  height: 5px;
+  width: 5px;
+}
