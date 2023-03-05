@@ -1,12 +1,12 @@
 function changeGridSize() {
-  const num = +prompt("What size do you want the canvas to be? 0-100");
-  if (num <= 0 || num > 100) {
+  currentSize = +prompt("What size do you want the canvas to be? 0-100");
+  if (currentSize <= 0 || currentSize > 100) {
     alert("Invalid");
     return;
   }
 
   removeGrid();
-  createGrid(num);
+  createGrid(currentSize);
 }
 
 function removeGrid() {
@@ -34,9 +34,15 @@ function createGrid(num) {
 const SIZE_BUTTON = document.querySelector("button.size");
 const COLOR_INPUT = document.querySelector("input");
 const CONTAINER_DIV = document.querySelector("div.container");
+const RESET_BUTTON = document.querySelector("button.reset");
 let color = "black";
+let currentSize = 16;
 
 SIZE_BUTTON.addEventListener("click", changeGridSize);
+RESET_BUTTON.addEventListener("click", () => {
+  removeGrid();
+  createGrid(currentSize);
+});
 COLOR_INPUT.addEventListener("input", (event) => (color = `${event.target.value}`));
 
 createGrid(32);

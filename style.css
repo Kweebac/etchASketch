@@ -24,7 +24,8 @@
 }
 
 button.size,
-input {
+input,
+button.reset {
   height: 30px;
   width: 50px;
 }
