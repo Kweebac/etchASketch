@@ -1,14 +1,30 @@
 .container {
   display: flex;
   flex-flow: column;
+  height: 600px;
+  width: 600px;
 }
 
 .container div {
   display: flex;
+  flex-grow: 1;
 }
 
 .container div div {
-  border: 1px solid black;
-  height: 5px;
-  width: 5px;
+  background-color: #e7e7e7;
+  border: 1px solid lightgray;
+  flex-grow: 1;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+button.size,
+input {
+  height: 30px;
+  width: 50px;
 }

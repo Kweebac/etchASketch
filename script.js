@@ -23,12 +23,20 @@ function createGrid(num) {
 
     for (let j = 0; j < num; j++) {
       const NEW_DIV2 = document.createElement("div");
+      NEW_DIV2.addEventListener("mouseenter", () => {
+        NEW_DIV2.style.backgroundColor = `${color}`;
+      });
       NEW_DIV.appendChild(NEW_DIV2);
     }
   }
 }
 
 const SIZE_BUTTON = document.querySelector("button.size");
+const COLOR_INPUT = document.querySelector("input");
 const CONTAINER_DIV = document.querySelector("div.container");
+let color = "black";
 
 SIZE_BUTTON.addEventListener("click", changeGridSize);
+COLOR_INPUT.addEventListener("input", (event) => (color = `${event.target.value}`));
+
+createGrid(32);
