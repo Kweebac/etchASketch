@@ -1,8 +1,10 @@
 function changeGridSize() {
-  currentSize = +prompt("What size do you want the canvas to be? 0-100");
-  if (currentSize <= 0 || currentSize > 100) {
+  temp = +prompt("What size do you want the canvas to be? 0-100");
+  if (temp <= 0 || temp > 100) {
     alert("Invalid");
     return;
+  } else {
+    currentSize = temp;
   }
 
   removeGrid();
